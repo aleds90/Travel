@@ -64,7 +64,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">          
-                    <h3>Single Details</h3>
+                    <h3>${travel.title}</h3>
                 </div>
             </div><!-- end row -->
         </div><!-- end container -->
@@ -106,11 +106,11 @@
 			                                <div class="widget-title">
 			                                    <h3>CATEGORY</h3>
 			                                </div><!-- end title -->
-			                                    <a>Adventure</a>
+			                                    <a>${travel.category.slug}</a>
 			                               <div class="widget-title">
 			                                    <h3>BUDGET</h3>
 			                                </div><!-- end title -->
-			                                <p>Low Budget ( max 1000$) </p>
+			                                <p>${travel.target.name} </p>
 			                                <div class="widget-title">
 			                                    <h3>USERS INTERESTED</h3>
 			                                </div><!-- end title -->
@@ -127,9 +127,9 @@
 
                                 <div class="tags clearfix">
                                     <h5>TAGS : </h5>
-                                    <a href="#" class="btn btn-default btn-normal">THAILANDIA</a>
-                                    <a href="#" class="btn btn-default btn-normal">BANGKOK</a>
-                                    <a href="#" class="btn btn-default btn-normal">ADVENTURE</a>
+                                     <c:forEach items="${travel.travelTags}" var="t">
+                                    	<a href="#" class="btn btn-default btn-normal">${t.tag.name}</a>
+                                   	</c:forEach>
                                 </div><!-- end tags -->
 
                                 <div class="comments clearfix">
@@ -185,13 +185,10 @@
                                 </div><!-- end title -->
                                 <div class="listwidget">
                                     <ul>
-                                        <li><a href="#">Bangkok</a></li>
-                                        <li><a href="#">Nonthaburi</a></li>
-                                        <li><a href="#">Chiang Mai</a></li>
-                                        <li><a href="#">Udon Thani</a></li>
-                                        <li><a href="#">Hat Yai</a></li>
-                                        <li><a href="#">Songkhla</a></li>
-                                        <li><a href="#">Bangkok</a></li>
+	                                    <c:forEach items="${travel.stages}" var="t">
+	                                    	 <li><a href="#">${t.city.name}</a></li>
+	                                   	</c:forEach>
+                                       
                                     </ul>
                                 </div><!-- end listwidget -->
                             </div><!-- end widget -->

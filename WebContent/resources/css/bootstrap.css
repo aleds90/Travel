@@ -637,7 +637,7 @@ th {
 .glyphicon-shopping-cart:before {
   content: "\e116";
 }
-.glyphicon-folder-close:before {
+.glyphicon-n-close:before {
   content: "\e117";
 }
 .glyphicon-folder-open:before {

@@ -81,7 +81,7 @@
                                     <h5>NEW COSTUMER</h5>
                                     <p>By creating an account you will be able to travel, be up to date other people, and keep track of the trips.</p>
                                     <hr>
-                                    <button type="submit" class="btn btn-primary btn-normal border-radius">Register Now</button>
+                                    <a href="/Travel/registration" class="btn btn-primary btn-normal border-radius">REGISTER NOW</a>
                                 </div><!-- end col -->
 
                                 <div class="col-md-6">
@@ -156,6 +156,8 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </footer>
+    
+   
 
 </body>
 

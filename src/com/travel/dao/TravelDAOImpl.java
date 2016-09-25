@@ -58,4 +58,17 @@ public class TravelDAOImpl implements TravelDAO {
 		return (Travel) query.uniqueResult();
 	}
 
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Integer> getTravelsIDByProperties(String budget, String place) {
+		Session session = this.sessionFactory.getCurrentSession();
+		String queryString = "SELECT DISTINCT travel.id FROM travel left join stage on travel.id = stage.travel left join city on stage.city = city.id"
+				+ " left join country on city.CountryCode = country.Code left join target on target.id = travel.target "
+				+ "where (city.name like '"+place+"%' or country.Name like '"+place+"%' ) AND (target.maxium_budget < "+budget+" )";
+		Query query = session.createSQLQuery(queryString);
+
+		return (List<Integer>) query.list();
+	}
+
 }

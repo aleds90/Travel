@@ -11,4 +11,5 @@ public interface TravelDAO {
 	 public void update(Travel travel);
 	 public List<Travel> getAll();
 	 public Travel getById(int id);
+	 public List<Integer> getTravelsIDByProperties(String place, String budget);
 }

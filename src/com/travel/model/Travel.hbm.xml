@@ -8,10 +8,10 @@
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="category" class="com.travel.model.Category" fetch="select">
+        <many-to-one name="category" class="com.travel.model.Category" fetch="select" lazy="false">
             <column name="category" />
         </many-to-one>
-        <many-to-one name="target" class="com.travel.model.Target" fetch="select">
+        <many-to-one name="target" class="com.travel.model.Target" fetch="select" lazy="false">
             <column name="target" />
         </many-to-one>
         <many-to-one name="user" class="com.travel.model.User" fetch="select" lazy="false">
@@ -47,7 +47,7 @@
             </key>
             <one-to-many class="com.travel.model.Stage" />
         </set>
-        <set name="travelTags" table="travel_tag" inverse="true" lazy="true" fetch="select">
+        <set name="travelTags" table="travel_tag" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="travel" />
             </key>

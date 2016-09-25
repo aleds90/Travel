@@ -68,137 +68,137 @@
                     <div class="home-form">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li class="active">
-                                <a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab"><i class="icon-hotel68"></i> RELAX</a></li>
-                            <li><a href="#tab_05" aria-controls="tab_05" role="tab" data-toggle="tab"><i class="icon-bicycle12"></i> ADVENTURE</a></li>
-                            <li><a href="#tab_04" aria-controls="tab_04" role="tab" data-toggle="tab"><i class="icon-location38"></i> ON THE ROAD</a></li>
-                            <li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab"><i class="icon-airplane70"></i> INTERNATIONAL</a></li>
-                            <li><a href="#tab_03" aria-controls="tab_03" role="tab" data-toggle="tab"><i class="icon-sedan3"></i> LUXURY</a></li>
+                        	<li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab" ><i class="icon-location38"></i> ALL</a></li>
+                        	<li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab" ><i class="icon-hotel68"></i> Relax</a></li>
+                            <li><a href="#tab_03" aria-controls="tab_03" role="tab" data-toggle="tab" ><i class="icon-bicycle12"></i> ADVENTURE</a></li>
+                            <li><a href="#tab_04" aria-controls="tab_04" role="tab" data-toggle="tab" ><i class="icon-sedan3"></i> ON THE ROAD</a></li>
+                            <li><a href="#tab_05" aria-controls="tab_05" role="tab" data-toggle="tab" ><i class="icon-airplane70"></i> INTERNATIONAL</a></li>
+                           
                         </ul>
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="tab_01">
                                 <h6>WHERE WOULD YOU LIKE TO GO?</h6>
-                                <form class="bookform form-inline row">
+                                <form class="bookform form-inline row" method="post" action="/Travel/secured/home">
                                     <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Destination: Country, City,Airport,...">
+                                        <input type="text" name="place" class="form-control" placeholder=" Destination: Country, City,..." value="${place}">
                                     </div>
-                                    <div class="form-group col-md-2 col-sm-6 col-xs-12">
+                                 <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control hasDatepicker" placeholder="Check in" id="datepicker">
+                                            <input type="text" name="period" class="form-control hasDatepicker" placeholder="Period" id="datepicker6" >
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control hasDatepicker" placeholder="Check out" id="datepicker1">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                             <input type="text" name="budget" class="form-control" placeholder="Budget"  onkeypress='validate(event)' value="${budget}">
+                                              <div class="input-group-addon"><i class="fa fa-euro"></i></div>
                                         </div>
                                     </div>
-                                   
+                                    <input type="hidden" name="category" class="form-control" value="All" >
                                     <div class="form-group col-md-2 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> FIND NOW</button>
+                                        <button type="submit" name="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> FIND NOW</button>
                                     </div>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_02">
                                 <h6>WHO WOULD YOU LIKE TO GO?</h6>
-                                <form class="bookform form-inline row">
+                                 <form class="bookform form-inline row" method="post" action="/Travel/secured/home">
                                     <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Destination: Country, City,Airport,...">
+                                        <input type="text" name="place" class="form-control" placeholder=" Destination: Country, City,..."  value="${place}">
                                     </div>
-                                    <div class="form-group col-md-2 col-sm-6 col-xs-12">
+                                 <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control hasDatepicker" placeholder="Check in" id="datepicker2">
+                                            <input type="text" name="period" class="form-control hasDatepicker" placeholder="Period" id="datepicker6">
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control hasDatepicker" placeholder="Check out" id="datepicker3">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                             <input type="text" name="budget" class="form-control" placeholder="Budget" onkeypress='validate(event)' value="${budget}">
+                                              <div class="input-group-addon"><i class="fa fa-euro"></i></div>
                                         </div>
                                     </div>
-                              
+                                    <input type="hidden" name="category" class="form-control" value="Relax">
                                     <div class="form-group col-md-2 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> FIND NOW</button>
+                                        <button type="submit" name="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> FIND NOW</button>
                                     </div>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_03">
                                 <h6>HOW WOULD YOU LIKE TO GO?</h6>
-                                <form class="bookform form-inline row">
+                                <form class="bookform form-inline row" method="post" action="<c:url value='/secured/home' />">
                                     <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Destination: Country, City,Airport,...">
+                                        <input type="text" name="place" class="form-control" placeholder=" Destination: Country, City,..."  value="${place}">
                                     </div>
-                                    <div class="form-group col-md-2 col-sm-6 col-xs-12">
+                                 <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control hasDatepicker" placeholder="Check in" id="datepicker4">
+                                            <input type="text" name="period" class="form-control hasDatepicker" placeholder="Period" id="datepicker6">
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control hasDatepicker" placeholder="Check out" id="datepicker5">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                             <input type="text" name="budget" class="form-control" placeholder="Budget" onkeypress='validate(event)' value="${budget}">
+                                              <div class="input-group-addon"><i class="fa fa-euro"></i></div>
                                         </div>
                                     </div>
-                                 
+                                   <input type="hidden" name="category" class="form-control" value="Adventure">
                                     <div class="form-group col-md-2 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> FIND NOW</button>
+                                        <button type="submit" name="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> FIND NOW</button>
                                     </div>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_04">
-                                <h6>WHEN  WOULD YOU LIKE TO GO?</h6>
-                                <form class="bookform form-inline row">
+                                <h6>WHY WOULD YOU LIKE TO GO?</h6>
+                                <form class="bookform form-inline row" method="post" action="<c:url value='/secured/home' />">
                                     <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Destination: Country, City,Airport,...">
+                                        <input type="text" name="place" class="form-control" placeholder=" Destination: Country, City,..."  value="${place}">
                                     </div>
-                                    <div class="form-group col-md-2 col-sm-6 col-xs-12">
+                                 <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control hasDatepicker" placeholder="Check in" id="datepicker6">
+                                            <input type="text" name="period" class="form-control hasDatepicker" placeholder="Period" id="datepicker6">
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control hasDatepicker" placeholder="Check out" id="datepicker7">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                             <input type="text" name="budget" class="form-control" placeholder="Budget" onkeypress='validate(event)' value="${budget}">
+                                              <div class="input-group-addon"><i class="fa fa-euro"></i></div>
                                         </div>
                                     </div>
-                          
+                                   <input type="hidden" name="category" class="form-control" value="On The Road"> 
                                     <div class="form-group col-md-2 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> FIND NOW</button>
+                                        <button type="submit" name="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> FIND NOW</button>
                                     </div>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_05">
                                 <h6>WHEN  WOULD YOU LIKE TO GO?</h6>
-                                <form class="bookform form-inline row">
-                                    <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Destination: Country, City,Airport,...">
-                                    </div>
-                                    <div class="form-group col-md-2 col-sm-6 col-xs-12">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control hasDatepicker" placeholder="Check in" id="datepicker8">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-2 col-sm-6 col-xs-12">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control hasDatepicker" placeholder="Check out" id="datepicker9">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        </div>
-                                    </div>
-                              
-                                    <div class="form-group col-md-2 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> FIND NOW</button>
-                                    </div>
-                                </form>
+		                           <form class="bookform form-inline row" method="post" action="<c:url value='/secured/home' />">
+		                                    <div class="form-group col-md-4 col-sm-6 col-xs-12">
+		                                        <input type="text" name="place" class="form-control" placeholder=" Destination: Country, City,..." value="${place}">
+		                                    </div>
+		                                 <div class="form-group col-md-2 col-sm-6 col-xs-12">
+		                                        <div class="input-group">
+		                                            <input type="text" name="period" class="form-control hasDatepicker" placeholder="Period" id="datepicker6">
+		                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group col-md-2 col-sm-6 col-xs-12">
+		                                        <div class="input-group">
+		                                             <input type="text" name="budget" class="form-control" placeholder="Budget" onkeypress='validate(event)' value="${budget}">
+		                                              <div class="input-group-addon"><i class="fa fa-euro"></i></div>
+		                                        </div>
+		                                    </div>
+		                                    <input type="hidden" name="category" class="form-control" value="International">
+		                                    <div class="form-group col-md-2 col-sm-6 col-xs-12">
+		                                        <button type="submit" name="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> FIND NOW</button>
+		                                    </div>
+		                                </form>
                             </div><!-- end tab-pane -->
                         </div><!-- end tab-content -->
                     </div><!-- end homeform -->
@@ -232,7 +232,7 @@
                             </div><!-- ne dpost-meta -->
                             <div class="post-content clearfix">
                                 <p>${t.description } </p>
-                                <a href="/Travel/secured/travel" class="btn btn-primary btn-sm">See More</a>
+                                <a href="/Travel/secured/travel?id=${t.id }" class="btn btn-primary btn-sm">See More</a>
                             </div><!-- end post-content -->
                         </div><!-- end col -->
                         <div class="col-md-6 col-sm-12">
@@ -266,27 +266,6 @@
                     </div>
                     </c:forEach>
                       <!-- end post-wrapper -->     
-                  
-                        <nav class="text-center">
-                            <ul class="pagination">
-                                <li>
-                                  <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">«</span>
-                                  </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                  <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">»</span>
-                                  </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    <!-- END CONTENT -->
                 </div><!-- end fullwidth -->
             </div><!-- end row -->
         </div><!-- end container -->
@@ -334,5 +313,17 @@
 <script src="<c:url value="/resources/js/jquery.themepunch.tools.min.js" />"></script>
 <script src="<c:url value="/resources/js/jquery.themepunch.revolution.min.js" />"></script>
 <script src="<c:url value="/resources/js/revslider.js" />"></script>
+<script>
+function validate(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+</script>
 
 </html>

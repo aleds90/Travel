@@ -45,5 +45,16 @@ public class CityService {
 	 public void add(@RequestBody City city){  
 		 cityDAO.add(city);
 	 } 
+	 
+	 
+	 @RequestMapping(value = "/getCountries", method = RequestMethod.GET)
+	 public List<String> getCountry(){
+		 List<String> countries = new ArrayList<>();
+		 countries.add("italy");
+		 countries.add("france");
+		 countries.add("spain");
+		 return countries;  
+		 
+	 }  
 
 }

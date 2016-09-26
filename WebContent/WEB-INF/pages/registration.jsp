@@ -12,6 +12,7 @@
 <link href="<c:url value="/resources/tags/jquery.tagit.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/tags/tagit.ui-zendesk.css" />" rel="stylesheet">
 
+
 <link rel="shortcut icon" href="<c:url value="/resources/images/favicon.ico" />" type="image/x-icon">
 <link rel="apple-touch-icon" href="<c:url value="/resources/images/apple-touch-icon.png" />">
 <link rel="apple-touch-icon" sizes="72x72"  href="<c:url value="/resources/images/apple-touch-icon-72x72.png" />">
@@ -77,7 +78,7 @@
                             <br>
                             <hr>
                             <br>
-                            <form id="infoform">
+                            <form id="infoform" action="/Travel/registration" method="post" >
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="hotel-title">
@@ -87,22 +88,22 @@
                                         <div class="row">
                                            
                                             <div class="col-md-12 col-sm-6 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Username"> 
+                                                <input type="text" class="form-control" placeholder="Username *" name="username" id="username"> 
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Email *"> 
+                                                <input type="text" class="form-control" placeholder="Email *" name="email" id="email"> 
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Confirm Email *"> 
+                                                <input type="text" class="form-control" placeholder="Confirm Email *" name="confirmEmail" id="confirmEmail"> 
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Phone Number"> 
+                                                <input type="text" class="form-control" placeholder="Phone Number *" name="phoneNumber" id="phoneNumber" onkeypress='validate(event)'> 
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Password *"> 
+                                                <input type="text" class="form-control" placeholder="Password *" name="password" id="password"> 
                                             </div>
                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Confirm Password *"> 
+                                                <input type="text" class="form-control" placeholder="Confirm Password *" name="confirmPassword" id="confirmPassword"> 
                                             </div>                
                                         </div>
                                     </div><!-- end col -->
@@ -114,27 +115,27 @@
 
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="First *"> 
+                                                <input type="text" class="form-control" placeholder="First *" name="firstname" id="firstname"> 
                                             </div>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Last *"> 
+                                                <input type="text" class="form-control" placeholder="Last *" name="lastname" id="lastname"> 
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Birthday *"> 
+                                                <input type="text" class="form-control" placeholder="Birthday *" name="birthday" id="birthday"> 
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Country of Passport"> 
+                                                <input type="text" class="form-control" placeholder="Country of Passport *" name="country" id="country">  
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Avatar"> 
+                                                <input type="text" class="form-control" placeholder="Avatar" name="avatar" id="avatar"> 
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="How many years in terms of travel experience do you have?"> 
+                                                <input type="text" class="form-control" placeholder="How many years in terms of travel experience do you have?" name="travelExperience" id="travelExperience" onkeypress='validate(event)'> 
                                             </div>
                                         
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                               	  <p>Select all the country that you visited...like in the example</p>
-                                                <input type="text" class="form-control" id="removeConfirmationTags" value="Italy">
+                                                <input type="text" class="form-control" id="removeConfirmationTags" value="Italy" name="countriesVisited" id="countriesVisited">
                                             </div>                   
                                         </div>
                                     </div><!-- end col -->
@@ -146,7 +147,7 @@
                                     <div class="col-md-12">
                                         <p>By selecting to complete this registration I acknowledge that I have read and accept <a href="#">the rules</a> &amp; <a href="#">restrictions terms</a> &amp; <a href="#">conditions</a>, and <a href="#">privacy policy</a>.</p>
                                         <br>
-                                        <a href="#" class="btn btn-primary btn-normal btn-lg">Confirm Register</a>
+                                         <button type="submit" class="btn btn-primary btn-normal btn-lg" >Confirm register</button>
                                     </div><!-- end col -->
                                 </div><!-- end row -->
                             </form><!-- end form -->
@@ -155,8 +156,7 @@
                     <!-- END CONTENT -->
 
                 </div><!-- end fullwidth -->
-                
-             
+         </section>
 </body>
 
 
@@ -180,6 +180,10 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="<c:url value="/resources/tags/tag-it.js" />"></script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+<script src="<c:url value="/resources/js/validator.js" />"></script>
+
 <script>
         $(function(){
             var sampleTags = ['Aruba', 'Afghanistan', 'Angola', 'Anguilla', 'Albania', 'Andorra', 'Netherlands Antilles', 'United Arab Emirates', 'Argentina', 'Armenia', 'American Samoa', 'Antarctica', 'French Southern territories', 'Antigua and Barbuda', 'Australia', 'Austria', 'Azerbaijan', 'Burundi', 'Belgium', 'Benin', 'Burkina Faso', 'Bangladesh', 'Bulgaria', 'Bahrain', 'Bahamas', 'Bosnia and Herzegovina', 'Belarus', 'Belize', 'Bermuda', 'Bolivia', 'Brazil', 'Barbados', 'Brunei', 'Bhutan', 'Bouvet Island', 'Botswana', 'Central African Republic', 'Canada', 'Cocos (Keeling) Islands', 'Switzerland', 'Chile', 'China', 'Côte d�?Ivoire', 'Cameroon', 'Congo, The Democratic Republic of the', 'Congo', 'Cook Islands', 'Colombia', 'Comoros', 'Cape Verde', 'Costa Rica', 'Cuba', 'Christmas Island', 'Cayman Islands', 'Cyprus', 'Czech Republic', 'Germany', 'Djibouti', 'Dominica', 'Denmark', 'Dominican Republic', 'Algeria', 'Ecuador', 'Egypt', 'Eritrea', 'Western Sahara', 'Spain', 'Estonia', 'Ethiopia', 'Finland', 'Fiji Islands', 'Falkland Islands', 'France', 'Faroe Islands', 'Micronesia, Federated States of', 'Gabon', 'United Kingdom', 'Georgia', 'Ghana', 'Gibraltar', 'Guinea', 'Guadeloupe', 'Gambia', 'Guinea-Bissau', 'Equatorial Guinea', 'Greece', 'Grenada', 'Greenland', 'Guatemala', 'French Guiana', 'Guam', 'Guyana', 'Hong Kong', 'Heard Island and McDonald Islands', 'Honduras', 'Croatia', 'Haiti', 'Hungary', 'Indonesia', 'India', 'British Indian Ocean Territory', 'Ireland', 'Iran', 'Iraq', 'Iceland', 'Israel', 'Italy', 'Jamaica', 'Jordan', 'Japan', 'Kazakstan', 'Kenya', 'Kyrgyzstan', 'Cambodia', 'Kiribati', 'Saint Kitts and Nevis', 'South Korea', 'Kuwait', 'Laos', 'Lebanon', 'Liberia', 'Libyan Arab Jamahiriya', 'Saint Lucia', 'Liechtenstein', 'Sri Lanka', 'Lesotho', 'Lithuania', 'Luxembourg', 'Latvia', 'Macao', 'Morocco', 'Monaco', 'Moldova', 'Madagascar', 'Maldives', 'Mexico', 'Marshall Islands', 'Macedonia', 'Mali', 'Malta', 'Myanmar', 'Mongolia', 'Northern Mariana Islands', 'Mozambique', 'Mauritania', 'Montserrat', 'Martinique', 'Mauritius', 'Malawi', 'Malaysia', 'Mayotte', 'Namibia', 'New Caledonia', 'Niger', 'Norfolk Island', 'Nigeria', 'Nicaragua', 'Niue', 'Netherlands', 'Norway', 'Nepal', 'Nauru', 'New Zealand', 'Oman', 'Pakistan', 'Panama', 'Pitcairn', 'Peru', 'Philippines', 'Palau', 'Papua New Guinea', 'Poland', 'Puerto Rico', 'North Korea', 'Portugal', 'Paraguay', 'Palestine', 'French Polynesia', 'Qatar', 'Réunion', 'Romania', 'Russian Federation', 'Rwanda', 'Saudi Arabia', 'Sudan', 'Senegal', 'Singapore', 'South Georgia and the South Sandwich Islands', 'Saint Helena', 'Svalbard and Jan Mayen', 'Solomon Islands', 'Sierra Leone', 'El Salvador', 'San Marino', 'Somalia', 'Saint Pierre and Miquelon', 'Sao Tome and Principe', 'Suriname', 'Slovakia', 'Slovenia', 'Sweden', 'Swaziland', 'Seychelles', 'Syria', 'Turks and Caicos Islands', 'Chad', 'Togo', 'Thailand', 'Tajikistan', 'Tokelau', 'Turkmenistan', 'East Timor', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Tuvalu', 'Taiwan', 'Tanzania', 'Uganda', 'Ukraine', 'United States Minor Outlying Islands', 'Uruguay', 'United States', 'Uzbekistan', 'Holy See (Vatican City State)', 'Saint Vincent and the Grenadines', 'Venezuela', 'Virgin Islands, British', 'Virgin Islands, U.S.', 'Vietnam', 'Vanuatu', 'Wallis and Futuna', 'Samoa', 'Yemen', 'Yugoslavia', 'South Africa', 'Zambia', 'Zimbabwe'];
@@ -220,7 +224,17 @@
             });
             
         });
-    </script>
-
-
+        </script>
+<script>
+function validate(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+</script>
 </html>

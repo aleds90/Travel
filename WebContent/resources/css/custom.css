@@ -53,3 +53,7 @@
 		word-wrap: break-word;
 		width:150px;
 		}
+		
+		.my-error-class {
+    color:#FF0000;  /* red */
+}

@@ -68,11 +68,11 @@
                     <div class="home-form">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                        	<li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab" ><i class="icon-location38"></i> ALL</a></li>
-                        	<li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab" ><i class="icon-hotel68"></i> Relax</a></li>
-                            <li><a href="#tab_03" aria-controls="tab_03" role="tab" data-toggle="tab" ><i class="icon-bicycle12"></i> ADVENTURE</a></li>
-                            <li><a href="#tab_04" aria-controls="tab_04" role="tab" data-toggle="tab" ><i class="icon-sedan3"></i> ON THE ROAD</a></li>
-                            <li><a href="#tab_05" aria-controls="tab_05" role="tab" data-toggle="tab" ><i class="icon-airplane70"></i> INTERNATIONAL</a></li>
+                        	<li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab" id="tab_all"><i class="icon-location38"></i> ALL</a></li>
+                        	<li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab" id="tab_relax"><i class="icon-hotel68"></i> Relax</a></li>
+                            <li><a href="#tab_03" aria-controls="tab_03" role="tab" data-toggle="tab" id="tab_adventure"><i class="icon-bicycle12"></i> ADVENTURE</a></li>
+                            <li><a href="#tab_04" aria-controls="tab_04" role="tab" data-toggle="tab" id="tab_ontheroad"><i class="icon-sedan3"></i> ON THE ROAD</a></li>
+                            <li><a href="#tab_05" aria-controls="tab_05" role="tab" data-toggle="tab" id="tab_international"><i class="icon-airplane70"></i> INTERNATIONAL</a></li>
                            
                         </ul>
                         <div class="tab-content">
@@ -214,28 +214,7 @@
 
                     <!-- START CONTENT -->
                     <c:forEach items="${travels}" var="t">
-                    <div class="post-wrapper row clearfix border-bottom">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="post-title clearfix">
-                                <h5><a href="deal-single.html">${t.title }</a></h5>
-                            </div><!-- end ost-title -->
-                            <div class="post-meta clearfix">
-                                <span><i class="icon-attach"></i> ${t.stages.toArray()[0].startDate }</span>
-                                <span><i class="icon-map110"></i> ${t.stages.toArray()[0].city.country.region }, ${t.stages.toArray()[0].city.country.name }</span>
-                                <span class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- end rating -->
-                            </div><!-- ne dpost-meta -->
-                            <div class="post-content clearfix">
-                                <p>${t.description } </p>
-                                <a href="/Travel/secured/travel?id=${t.id }" class="btn btn-primary btn-sm">See More</a>
-                            </div><!-- end post-content -->
-                        </div><!-- end col -->
-                        <div class="col-md-6 col-sm-12">
+                     <div class="col-md-6 col-sm-12">
                             <div class="post-media clearfix">
                                 <a href="deal-single.html"><img src="/Travel/resources/images/upload/blog_03.png" alt="" class="img-responsive"></a>
                                 <div id="countdown_01" class="deals-count">
@@ -263,6 +242,28 @@
                                 </div> <!-- end of countdown -->
                             </div><!-- end post-media -->
                         </div><!-- end col -->
+                    <div class="post-wrapper row clearfix border-bottom" id="${t.category.slug}">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="post-title clearfix">
+                                <h5><a href="deal-single.html">${t.title }</a></h5>
+                            </div><!-- end ost-title -->
+                            <div class="post-meta clearfix">
+                                <span><i class="icon-attach"></i> ${t.stages.toArray()[0].startDate }</span>
+                                <span><i class="icon-map110"></i> ${t.stages.toArray()[0].city.country.region }, ${t.stages.toArray()[0].city.country.name }</span>
+                                <span class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </span><!-- end rating -->
+                            </div><!-- ne dpost-meta -->
+                            <div class="post-content clearfix">
+                                <p>${t.description } </p>
+                                <a href="/Travel/secured/travel?id=${t.id }" class="btn btn-primary btn-sm">See More</a>
+                            </div><!-- end post-content -->
+                        </div><!-- end col -->
+                       
                     </div>
                     </c:forEach>
                       <!-- end post-wrapper -->     
@@ -325,5 +326,45 @@ function validate(evt) {
   }
 }
 </script>
-
+<script>
+$( "#tab_relax" ).click(function() {
+	$("div[id^='Adventure']").hide();
+	$("div[id^='On The Road']").hide();
+	$("div[id^='International']").hide();
+	
+	$("div[id^='Relax']").show();
+	});
+	
+$( "#tab_adventure" ).click(function() {
+	$("div[id^='Relax']").hide();
+	$("div[id^='On The Road']").hide();
+	$("div[id^='International']").hide();
+	
+	$("div[id^='Adventure']").show();
+	});
+	
+$( "#tab_ontheroad" ).click(function() {
+	$("div[id^='Relax']").hide();
+	$("div[id^='Adventure']").hide();
+	$("div[id^='International']").hide();
+	
+	$("div[id^='On The Road']").show();
+	});
+	
+$( "#tab_international" ).click(function() {
+	$("div[id^='Relax']").hide();
+	$("div[id^='On The Road']").hide();
+	$("div[id^='Adventure']").hide();
+	
+	$("div[id^='International']").show();
+	});
+	
+$( "#tab_all" ).click(function() {
+	$("div[id^='Relax']").show();
+	$("div[id^='On The Road']").show();
+	$("div[id^='Adventure']").show();
+	$("div[id^='International']").show();
+	});
+	
+</script>
 </html>

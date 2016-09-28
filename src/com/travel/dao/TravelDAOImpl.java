@@ -61,11 +61,18 @@ public class TravelDAOImpl implements TravelDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Integer> getTravelsIDByProperties(String budget, String place) {
+	public List<Integer> getTravelsIDByProperties(String budget, String place, String category) {
 		Session session = this.sessionFactory.getCurrentSession();
-		String queryString = "SELECT DISTINCT travel.id FROM travel left join stage on travel.id = stage.travel left join city on stage.city = city.id"
-				+ " left join country on city.CountryCode = country.Code left join target on target.id = travel.target "
+		String queryString = null;
+		if(!category.equals("All")){
+		queryString = "SELECT DISTINCT travel.id FROM travel left join stage on travel.id = stage.travel left join city on stage.city = city.id"
+				+ " left join country on city.CountryCode = country.Code left join target on target.id = travel.target left join category on category.id = travel.category "
+				+ "where (city.name like '"+place+"%' or country.Name like '"+place+"%' ) AND (target.maxium_budget < "+budget+" ) AND (category.slug='"+category+"')";
+		}else{
+		queryString = "SELECT DISTINCT travel.id FROM travel left join stage on travel.id = stage.travel left join city on stage.city = city.id"
+				+ " left join country on city.CountryCode = country.Code left join target on target.id = travel.target left join category on category.id = travel.category "
 				+ "where (city.name like '"+place+"%' or country.Name like '"+place+"%' ) AND (target.maxium_budget < "+budget+" )";
+		}
 		Query query = session.createSQLQuery(queryString);
 
 		return (List<Integer>) query.list();

@@ -62,7 +62,7 @@ public class HomeController {
 	    	budget = "99999";
 	    
 	    //Give to jsp list of travels with all properties setted:
-	    List<Integer> travelsId = travelDao.getTravelsIDByProperties(budget, place);
+	    List<Integer> travelsId = travelDao.getTravelsIDByProperties(budget, place, category);
 	    ArrayList<Travel> travels = new ArrayList<>();
 	    if(!travelsId.isEmpty()){
 		    for(int i=0; i<travelsId.size(); i++){

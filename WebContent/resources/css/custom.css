@@ -4,9 +4,11 @@
 			z-index: -1;
 		}
      #container{
-		margin:0 auto;
-		width:900px;
-		margin-top: -80px;
+      margin: auto;
+    width: 80%;
+    border: 1px solid yellow;
+
+		
 	
 		}
 	#info_box{
@@ -18,7 +20,7 @@
 		}
       #map {
       		overflow: auto;
-			width: 60%;
+			width: 80%;
        		height: 400px;
       		margin: 0 auto; 
     		z-index: -1;

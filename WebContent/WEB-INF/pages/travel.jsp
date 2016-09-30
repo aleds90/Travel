@@ -36,7 +36,6 @@
                                         <a href="#">Welcome ${username}, </a>
                                     </li><!-- end yamm-fw -->      
                                     <li><a href="/Travel/secured/profile">Profile</a></li>     
-                                    <li><a href="#">My travels</a></li> 
                                     <li><a href="<c:url value="/logout" />">Logout</a></li>
                                     <li></li>
                                     <li class="sidebar-dropper"><a data-toggle="sidebar" data-target=".sidebar-right" class="noborder" href="#"><i class="icon-menu27"></i></a></li>

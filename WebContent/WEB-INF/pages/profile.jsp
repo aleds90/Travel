@@ -40,7 +40,6 @@
                                         <a href="#">Welcome ${username}, </a>
                                     </li><!-- end yamm-fw -->      
                                     <li><a href="/Travel/secured/profile">Profile</a></li>     
-                                    <li><a href="#">My travels</a></li> 
                                     <li><a href="<c:url value="/logout" />">Logout</a></li>
                                     <li></li>
                                     <li class="sidebar-dropper"><a data-toggle="sidebar" data-target=".sidebar-right" class="noborder" href="#"><i class="icon-menu27"></i></a></li>
@@ -65,12 +64,18 @@
     </header>
    
     <div id="container2">
-       <div id="map"></div>
-        <div id="container">
-	       <div id="infoi">
-	       <img src="/Travel/resources/images/upload/mini_desti_03.jpg">
-	        </div>
-          </div>
+       <div id="map">
+       </div>
+        <div id="container" class="home-form">
+	        <ul class="nav nav-tabs" >
+                <li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab" id="tab_all"> My Travels</a></li>
+     	       	<li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab" id="tab_relax"> Favorite</a></li>
+         		<li><a href="#tab_02" aria-controls="tab_03" role="tab" data-toggle="tab" id="tab_relax"> Dreams</a></li>
+                <li><a href="#tab_04" aria-controls="tab_04" role="tab" data-toggle="tab" id="tab_ontheroad">  Create Travel</a></li>
+                <li><a href="#tab_05" aria-controls="tab_05" role="tab" data-toggle="tab" id="tab_international"> Information</a></li>
+                           
+            </ul>
+         </div>
     </div>
 
 
@@ -101,7 +106,91 @@
           minZoom: 2,
           maxZoom: 2
         });
+      
+        var geocoder = new google.maps.Geocoder;
+        geocoder.geocode({'address': 'Stati Uniti'}, function(results, status) {
+          if (status === 'OK') {
+         
+            new google.maps.Marker({
+              map: map,
+              animation: google.maps.Animation.DROP,
+              position: results[0].geometry.location
+            });
+          } else {
+            window.alert('Geocode was not successful for the following reason: ' +
+                status);
+          }
+        });
+        var geocoder = new google.maps.Geocoder;
+        geocoder.geocode({'address': 'Italy'}, function(results, status) {
+          if (status === 'OK') {
+          
+            new google.maps.Marker({
+              map: map,
+              animation: google.maps.Animation.DROP,
+              position: results[0].geometry.location
+            });
+          } else {
+            window.alert('Geocode was not successful for the following reason: ' +
+                status);
+          }
+        });
+        var geocoder = new google.maps.Geocoder;
+        geocoder.geocode({'address': 'Argentina'}, function(results, status) {
+          if (status === 'OK') {
+         
+            new google.maps.Marker({
+              map: map,
+              animation: google.maps.Animation.DROP,
+              position: results[0].geometry.location
+            });
+          } else {
+            window.alert('Geocode was not successful for the following reason: ' +
+                status);
+          }
+        });
+        var geocoder = new google.maps.Geocoder;
+        geocoder.geocode({'address': 'El Salvador'}, function(results, status) {
+          if (status === 'OK') {
+            new google.maps.Marker({
+              map: map,
+              animation: google.maps.Animation.DROP,
+              position: results[0].geometry.location
+            });
+          } else {
+            window.alert('Geocode was not successful for the following reason: ' +
+                status);
+          }
+        });
+        var geocoder = new google.maps.Geocoder;
+        geocoder.geocode({'address': 'Australia'}, function(results, status) {
+          if (status === 'OK') {
+            new google.maps.Marker({
+              map: map,
+              animation: google.maps.Animation.DROP,
+              position: results[0].geometry.location
+            });
+          } else {
+            window.alert('Geocode was not successful for the following reason: ' +
+                status);
+          }
+        });
+        var geocoder = new google.maps.Geocoder;
+        geocoder.geocode({'address': 'Germania'}, function(results, status) {
+          if (status === 'OK') {
+            new google.maps.Marker({
+              map: map,
+              animation: google.maps.Animation.DROP,
+              position: results[0].geometry.location
+            });
+          } else {
+            window.alert('Geocode was not successful for the following reason: ' +
+                status);
+          }
+        });
       }
+      
+      
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdr4H1jBU8zz1M_6pyyUfSp6N7HTsgMEc&callback=initMap"
     async defer></script>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,6 @@
                                         <a href="#">Welcome ${username}, </a>
                                     </li><!-- end yamm-fw -->      
                                     <li><a href="/Travel/secured/profile">Profile</a></li>     
-                                    <li><a href="#">My travels</a></li> 
                                     <li><a href="<c:url value="/logout" />">Logout</a></li>
                                     <li></li>
                                     <li class="sidebar-dropper"><a data-toggle="sidebar" data-target=".sidebar-right" class="noborder" href="#"><i class="icon-menu27"></i></a></li>
@@ -213,8 +213,10 @@
                 <div id="fullwidth" class="col-sm-12">
 
                     <!-- START CONTENT -->
-                    <c:forEach items="${travels}" var="t">
-                     <div class="col-md-6 col-sm-12">
+                    <c:forEach items="${travels}" var="t" varStatus="loop">
+				    <c:choose>
+				        <c:when test="${loop.index mod 2 == 0}">
+				          <div class="col-md-6 col-sm-12" id="${t.category.slug}">
                             <div class="post-media clearfix">
                                 <a href="deal-single.html"><img src="/Travel/resources/images/upload/blog_03.png" alt="" class="img-responsive"></a>
                                 <div id="countdown_01" class="deals-count">
@@ -242,6 +244,9 @@
                                 </div> <!-- end of countdown -->
                             </div><!-- end post-media -->
                         </div><!-- end col -->
+				        </c:when>		  
+			    	</c:choose>
+                   
                     <div class="post-wrapper row clearfix border-bottom" id="${t.category.slug}">
                         <div class="col-md-6 col-sm-12">
                             <div class="post-title clearfix">
@@ -263,7 +268,39 @@
                                 <a href="/Travel/secured/travel?id=${t.id }" class="btn btn-primary btn-sm">See More</a>
                             </div><!-- end post-content -->
                         </div><!-- end col -->
-                       
+                       	    <c:choose>
+				        <c:when test="${loop.index mod 2 != 0}">
+				              <div class="col-md-6 col-sm-12" id="${t.category.slug}">
+                            <div class="post-media clearfix">
+                                <a href="deal-single.html"><img src="/Travel/resources/images/upload/blog_03.png" alt="" class="img-responsive"></a>
+                                <div id="countdown_01" class="deals-count">
+                                    <div class="dash days_dash">
+                                        <span class="dash_title">days</span>
+                                        <div class="digit"><div class="top" style="display: none;">7</div><div class="bottom" style="display: block;">7</div></div>
+                                        <div class="digit"><div class="top" style="display: none;">2</div><div class="bottom" style="display: block;">2</div></div>
+                                        <div class="digit"><div class="top" style="display: none;">9</div><div class="bottom" style="display: block;">9</div></div>
+                                    </div>
+                                    <div class="dash hours_dash">
+                                        <span class="dash_title">hours</span>
+                                        <div class="digit"><div class="top" style="display: none;">2</div><div class="bottom" style="display: block;">2</div></div>
+                                        <div class="digit"><div class="top" style="display: none;">3</div><div class="bottom" style="display: block;">3</div></div>
+                                    </div>
+                                    <div class="dash minutes_dash">
+                                        <span class="dash_title">min</span>
+                                        <div class="digit"><div class="top" style="display: none;">5</div><div class="bottom" style="display: block;">5</div></div>
+                                        <div class="digit"><div class="top" style="display: none;">9</div><div class="bottom" style="display: block;">9</div></div>
+                                    </div>
+                                    <div class="dash seconds_dash">
+                                        <span class="dash_title">sec</span>
+                                        <div class="digit"><div class="top" style="display: none;">4</div><div class="bottom" style="display: block;">4</div></div>
+                                        <div class="digit"><div class="top" style="display: none;">0</div><div class="bottom" style="display: block; overflow: hidden; height: 59.6307px;">1</div></div>
+                                    </div>
+                                </div> <!-- end of countdown -->
+                            </div><!-- end post-media -->
+                        </div><!-- end col -->
+				        </c:when>		  
+			    	</c:choose>
+                   
                     </div>
                     </c:forEach>
                       <!-- end post-wrapper -->     

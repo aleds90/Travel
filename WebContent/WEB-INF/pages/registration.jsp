@@ -110,7 +110,7 @@
 
                                       <div class="col-sm-6">
                                         <div class="hotel-title">
-                                            <h5>TELL ME SOMETHING ABOUT YOUR TRAVEL</h5>
+                                            <h5>TELL ME SOMETHING ABOUT YOU</h5>
                                         </div>
 
                                         <div class="row">
@@ -121,7 +121,7 @@
                                                 <input type="text" class="form-control" placeholder="Last *" name="lastname" id="lastname"> 
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Birthday *" name="birthday" id="birthday"> 
+		                                        <input type="text" name="birthday" class="form-control" placeholder="Birthday *" id="datepicker" >
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <input type="text" class="form-control" placeholder="Country of Passport *" name="country" id="country">  

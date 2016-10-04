@@ -78,4 +78,12 @@ public class TravelDAOImpl implements TravelDAO {
 		return (List<Integer>) query.list();
 	}
 
+
+	@Override
+	public List<Travel> getByUser(User user) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM Travel WHERE user.id='"+user.getId()+"'");
+		return (List<Travel>) query.list();
+	}
+
 }

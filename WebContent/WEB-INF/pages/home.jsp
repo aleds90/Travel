@@ -84,7 +84,7 @@
                                     </div>
                                  <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" name="period" class="form-control hasDatepicker" placeholder="Period" id="datepicker6" >
+                                            <input type="text" name="period" class="form-control" placeholder="Period" id="datepicker" >
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                                     </div>
                                  <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" name="period" class="form-control hasDatepicker" placeholder="Period" id="datepicker6">
+                                            <input type="text" name="period" class="form-control" placeholder="Period" id="datepicker4" >
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                     </div>
                                  <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" name="period" class="form-control hasDatepicker" placeholder="Period" id="datepicker6">
+                                           <input type="text" name="period" class="form-control" placeholder="Period" id="datepicker1" >
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
@@ -159,7 +159,7 @@
                                     </div>
                                  <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" name="period" class="form-control hasDatepicker" placeholder="Period" id="datepicker6">
+                                            <input type="text" name="period" class="form-control" placeholder="Period" id="datepicker2" >
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
@@ -184,7 +184,7 @@
 		                                    </div>
 		                                 <div class="form-group col-md-2 col-sm-6 col-xs-12">
 		                                        <div class="input-group">
-		                                            <input type="text" name="period" class="form-control hasDatepicker" placeholder="Period" id="datepicker6">
+		                                            <input type="text" name="period" class="form-control" placeholder="Period" id="datepicker3" >
 		                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
 		                                        </div>
 		                                    </div>

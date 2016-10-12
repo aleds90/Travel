@@ -61,7 +61,7 @@
         </div><!-- end sidebar menu -->
     </header>
    
-<section id="page-header">
+<section id="page-header" style="z-index: 0;">
         <div class="container-full absolute">
             <div class="container">
                 <div class="section-container">
@@ -206,8 +206,12 @@
             </div>
         </div><!-- end container -->
     </section>
-   
-<section class="section clearfix">
+
+<div>
+	<img style="z-index: 10;" id="random-image" src="/Travel/resources/images/apple-touch-icon-114x114.png" alt="">
+	
+</div>
+<section class="section clearfix" style="z-index: 0;">
         <div class="container">
             <div class="row">
                 <div id="fullwidth" class="col-sm-12">
@@ -308,6 +312,24 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </section>
+    <nav class="text-center">
+                              <ul class="pagination">
+                                <li>
+                                  <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">«</span>
+                                  </a>
+                                </li>
+                            	<c:forEach begin="${startpage}" end="${endpage}" var="t" >
+                                	<li><a href="#">${t}</a></li>
+                                </c:forEach>
+     
+                                <li>
+                                  <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">»</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </nav>
     
 <div class="copyrights clearfix">
         <div class="container">
@@ -331,8 +353,7 @@
                 </div><!-- end col -->
             </div><!-- end row -->
         </div><!-- end container -->
-    </div>
-    
+</div>    
 </body>
 
 <script src="<c:url value="/resources/js/jquery.min.js" />"></script>

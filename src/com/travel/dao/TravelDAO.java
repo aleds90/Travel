@@ -12,5 +12,6 @@ public interface TravelDAO {
 	 public List<Travel> getAll();
 	 public Travel getById(int id);
 	 public List<Integer> getTravelsIDByProperties(String place, String budget, String category);
+	 public int getCountTravelsIDByProperties(String place, String budget, String category);
 	 public List<Travel> getByUser(User user);
 }

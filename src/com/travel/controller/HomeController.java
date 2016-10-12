@@ -43,6 +43,9 @@ public class HomeController {
 	    ArrayList<Travel> travels = (ArrayList<Travel>) travelDao.getAll();
 	    model.addAttribute("travels", travels);
 	    
+	    model.addAttribute("currpage", null);
+	    model.addAttribute("startpage", null);
+	    model.addAttribute("endpage", null);
 	    return "home";
     }
     
@@ -62,7 +65,10 @@ public class HomeController {
 	    	budget = "99999";
 	    
 	    //Give to jsp list of travels with all properties setted:
-	    List<Integer> travelsId = travelDao.getTravelsIDByProperties(budget, place, category);
+	    //FIX: setto category all ogni volta ma è da sistemare in base a come voglio gestire le categorie.
+	    category = "All";
+	    
+	    List<Integer> travelsId = travelDao.getTravelsIDByProperties(place, budget, category);
 	    ArrayList<Travel> travels = new ArrayList<>();
 	    if(!travelsId.isEmpty()){
 		    for(int i=0; i<travelsId.size(); i++){
@@ -70,9 +76,15 @@ public class HomeController {
 		    	travels.add(travel);
 		    }
 	    }
+	    //FIX: testing counts query
+	    int countResults = travelDao.getCountTravelsIDByProperties(place, budget, category);
+	    
 	    //return model and view
+	    model.addAttribute("currpage", 1);
+	    model.addAttribute("startpage", 1);
+	    model.addAttribute("endpage", (countResults/20)+1);
 	    model.addAttribute("travels", travels);
-	    if(!budget.equals("99999"))
+	    if(!budget.equals("999999"))
 	    	model.addAttribute("budget", budget);
 	    model.addAttribute("place",place);
 	    

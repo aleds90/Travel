@@ -61,7 +61,7 @@ public class UserDAOImpl implements UserDAO {
         User user = (User) query.uniqueResult();
         if(user!=null){
 	        Role r = new Role();
-	        r.setName("ROLE_USER");
+	       // r.setName("ROLE_USER");
 	        List<Role> roles = new ArrayList<Role>();
 	        roles.add(r);
 	        user.setAuthorities(roles);

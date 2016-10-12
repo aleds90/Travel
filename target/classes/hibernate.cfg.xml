@@ -6,8 +6,7 @@
     <session-factory>
         
         <mapping resource="com/travel/model/User.hbm.xml"></mapping>
-        <mapping resource="com/travel/model/TravelTag.hbm.xml"></mapping>
-        
+        <mapping resource="com/travel/model/TravelTag.hbm.xml"></mapping>   
         <mapping resource="com/travel/model/Target.hbm.xml"></mapping>
         <mapping resource="com/travel/model/Tag.hbm.xml"></mapping>
         <mapping resource="com/travel/model/Stage.hbm.xml"></mapping>

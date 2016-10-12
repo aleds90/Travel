@@ -12,7 +12,6 @@
 <link href="<c:url value="/resources/tags/jquery.tagit.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/tags/tagit.ui-zendesk.css" />" rel="stylesheet">
 
-
 <link rel="shortcut icon" href="<c:url value="/resources/images/favicon.ico" />" type="image/x-icon">
 <link rel="apple-touch-icon" href="<c:url value="/resources/images/apple-touch-icon.png" />">
 <link rel="apple-touch-icon" sizes="72x72"  href="<c:url value="/resources/images/apple-touch-icon-72x72.png" />">
@@ -37,7 +36,6 @@
                                 <ul class="nav navbar-nav yamm">
                                     <li class="dropdown">
                                         <a href="#">HOME</a>
-                                     
                                     </li><!-- end yamm-fw -->                                                             
                                     <li><a href="#">About</a></li>
                                     <li class="sidebar-dropper"><a data-toggle="sidebar" data-target=".sidebar-right" class="noborder" href="#"><i class="icon-menu27"></i></a></li>
@@ -84,9 +82,7 @@
                                         <div class="hotel-title">
                                             <h5>CREATE PROFILE</h5>
                                         </div>
-
                                         <div class="row">
-                                           
                                             <div class="col-md-12 col-sm-6 col-xs-12">
                                                 <input type="text" class="form-control" placeholder="Username *" name="username" id="username"> 
                                             </div>
@@ -107,12 +103,10 @@
                                             </div>                
                                         </div>
                                     </div><!-- end col -->
-
                                       <div class="col-sm-6">
                                         <div class="hotel-title">
                                             <h5>TELL ME SOMETHING ABOUT YOU</h5>
                                         </div>
-
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <input type="text" class="form-control" placeholder="First *" name="firstname" id="firstname"> 
@@ -158,7 +152,6 @@
                 </div><!-- end fullwidth -->
          </section>
 </body>
-
 
 <script src="<c:url value="/resources/js/jquery.min.js" />"></script>
 <script src="<c:url value="/resources/js/jquery-ui.js" />"></script>
